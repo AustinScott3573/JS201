@@ -15,9 +15,17 @@ requirejs.config({
 });
 
 requirejs(
-  ["jquery", "firebase", "hbs", "bootstrap", "dom-access",],
+  ["jquery", "firebase", "hbs", "bootstrap"],
   // run these dependencies first, then run the below code
   function($, fb, Handlebars, bootstrap, dom, pop, promisetest, promisetest2) {
     //this assigns the arguments to the above dependencies
-    var myFirebaseRef = new Firebase("https://blazing-heat-5390.firebaseio.com/");
+    var myFirebaseRef = new Firebase("https://nss-austin-family.firebaseio.com//");
       myFirebaseRef.on("value", function(snapshot) {
+
+            var showFamily = function(data) {
+        require(['hbs!../templates/family.hbs'], function(familyTemplate) {
+          dom.html(familyTemplate(data));
+          })
+        });
+      };
+      showFamily(snapshot.val());
