@@ -1,0 +1,15 @@
+{
+  "family": [
+    {
+      "name": "Austin Scott",
+      "age": 21,
+      "gender": "male",
+      "skills": [
+        "fumbling",
+        "Cooking",
+        "Excuses",
+        "Lack of skills"
+      ]
+    }
+  ]
+}
